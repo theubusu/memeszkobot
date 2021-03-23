@@ -2,12 +2,13 @@
 import discord
 import os
 
-wersja = 'Release 1.5'
+wersja = 'Release 1.5.1'
+gra = "Apu Band"
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    game = discord.Game("Apu Band")
+    game = discord.Game(gra)
     await client.change_presence(status=discord.Status.online, activity=game) 
 
 @client.event
@@ -56,14 +57,14 @@ async def on_message(message):
 #!dnd        
     if message.content.startswith('!dnd'):
       if message.author.id == 631872127934660609:
-        game = discord.Game("Apu Band")
+        game = discord.Game(gra)
         await client.change_presence(status=discord.Status.dnd, activity=game)
         await message.channel.send('ok ' +message.author.mention)
 
 #!offdnd       
     if message.content.startswith('!offdnd'):
       if message.author.id == 631872127934660609:
-        game = discord.Game("Apu Band")
+        game = discord.Game(gra)
         await client.change_presence(status=discord.Status.online, activity=game)
         await message.channel.send('ok ' +message.author.mention)
 
