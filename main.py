@@ -2,13 +2,13 @@
 import discord
 import os
 
-wersja = 'Release 1.0'
+wersja = 'Release 1.5'
 client = discord.Client()
 
 @client.event
 async def on_ready():
-    activity = discord.Game(name="Apu Band")
-    await client.change_presence(activity=activity)
+    game = discord.Game("Apu Band")
+    await client.change_presence(status=discord.Status.online, activity=game) 
 
 @client.event
 async def on_message(message):
@@ -48,9 +48,24 @@ async def on_message(message):
     if message.content.startswith('!info'):
         embedVar = discord.Embed(title="Informacje", description="MeMeSzkoBot 3.0", color=0x0099ff)
         embedVar.add_field(name="Zaprogramowany przez theubusu#6401", value="Wersja " +wersja, inline=False)
+        embedVar.add_field(name="Kod MeMeszkobota jest dostępny", value="[tutaj](https://github.com/theubusu/memeszkobot) ", inline=False)
         embedVar.set_thumbnail(url="https://media.tenor.com/images/c78f273d8f6a182827a539302582adb6/tenor.gif")
         embedVar.set_footer(text='(R)theubusu 2021')
         await message.channel.send(embed=embedVar)
+        
+#!dnd        
+    if message.content.startswith('!dnd'):
+      if message.author.id == 631872127934660609:
+        game = discord.Game("Apu Band")
+        await client.change_presence(status=discord.Status.dnd, activity=game)
+        await message.channel.send('ok ' +message.author.mention)
+
+#!offdnd       
+    if message.content.startswith('!offdnd'):
+      if message.author.id == 631872127934660609:
+        game = discord.Game("Apu Band")
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await message.channel.send('ok ' +message.author.mention)
 
 
 client.run(os.getenv('Token'))
