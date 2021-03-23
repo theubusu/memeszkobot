@@ -2,7 +2,7 @@
 import discord
 import os
 
-wersja = 'Release 1.5.2'
+wersja = 'Release 1.5.3'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -61,14 +61,18 @@ async def on_message(message):
       if message.author.id == 631872127934660609:
         game = discord.Game(gra)
         await client.change_presence(status=discord.Status.dnd, activity=game)
-        await message.channel.send('ok ' +message.author.mention)
+        emoji = '\N{THUMBS UP SIGN}'
+        # or '\U0001f44d' or '👍'
+        await message.add_reaction(emoji)
 
 #!offdnd       
     if message.content.startswith('!offdnd'):
       if message.author.id == 631872127934660609:
         game = discord.Game(gra)
         await client.change_presence(status=discord.Status.online, activity=game)
-        await message.channel.send('ok ' +message.author.mention)
+        emoji = '\N{THUMBS UP SIGN}'
+        # or '\U0001f44d' or '👍'
+        await message.add_reaction(emoji)
 
 
 client.run(os.getenv('Token'))
