@@ -2,7 +2,7 @@
 import discord
 import os
 
-wersja = 'Release 1.5.4'
+wersja = 'Release 1.5.5'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -41,7 +41,7 @@ async def on_message(message):
         embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
         await message.channel.send(embed=embedVar)
         
-#!help
+#!kmd
     if message.content.startswith('!kmd'):
         embedVar = discord.Embed(title="Lista Komend", description="Wszystkie komendy MeMeSzkobota", color=0x0099ff)
         embedVar.add_field(name="Komendy:", value="!granko - granko time\n!przerwa - przerwa time\n!kmd - lista komend\n!test - testuje działalność bota\n!info - informacje o bocie", inline=False)
@@ -63,18 +63,21 @@ async def on_message(message):
       if message.author.id == 631872127934660609:
         game = discord.Game(gra)
         await client.change_presence(status=discord.Status.dnd, activity=game)
-        emoji = '\N{THUMBS UP SIGN}'
-        # or '\U0001f44d' or '👍'
+        emoji = '👍'
         await message.add_reaction(emoji)
+      else:
+        emoji = '⛔'
+        await message.add_reaction(emoji)        
 
 #!offdnd       
     if message.content.startswith('!offdnd'):
       if message.author.id == 631872127934660609:
         game = discord.Game(gra)
         await client.change_presence(status=discord.Status.online, activity=game)
-        emoji = '\N{THUMBS UP SIGN}'
-        # or '\U0001f44d' or '👍'
+        emoji = '👍'
         await message.add_reaction(emoji)
-
+      else:
+        emoji = '⛔'
+        await message.add_reaction(emoji)
 
 client.run(os.getenv('Token'))
