@@ -2,7 +2,7 @@
 import discord
 import os
 
-wersja = 'Release 1.5.3'
+wersja = 'Release 1.5.4'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -11,7 +11,9 @@ async def on_ready():
     game = discord.Game(gra)
     await client.change_presence(status=discord.Status.online, activity=game) 
     channel = client.get_channel(813379346768986123)
-    await channel.send('MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: '+wersja)
+    embedVar = discord.Embed(title="MeMeSzkoBot 3.0", description="MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: ", color=404040)
+    embedVar.add_field(name=wersja, value="Lista wersji dostępna [tutaj](https://pastebin.com/raw/CMbKpM4g)", inline=False)
+    await channel.send(embed=embedVar)
 
 @client.event
 async def on_message(message):
