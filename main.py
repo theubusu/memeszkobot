@@ -2,7 +2,7 @@
 import discord
 import os
 
-wersja = 'Release 1.5.1'
+wersja = 'Release 1.5.2'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -10,6 +10,8 @@ client = discord.Client()
 async def on_ready():
     game = discord.Game(gra)
     await client.change_presence(status=discord.Status.online, activity=game) 
+    channel = client.get_channel(813379346768986123)
+    await channel.send('MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: '+wersja)
 
 @client.event
 async def on_message(message):
