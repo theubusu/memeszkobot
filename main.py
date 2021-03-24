@@ -24,7 +24,7 @@ async def on_message(message):
         
 #!rtmbb - USUŃ W NASTĘPNEJ AKTUALIZACJI
     if message.content.startswith('!rtmbb'):
-        await message.channel.send('Do widzenia rytm :weary:)
+        await message.channel.send('Do widzenia rytm :weary:')
 
 #!granko 
     if message.content.startswith('!granko'):
