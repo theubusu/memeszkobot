@@ -1,8 +1,7 @@
-#wersja BETA
 import discord
 import os
 
-wersja = 'Release 1.5.5'
+wersja = 'Release 1.5.5.1'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -22,6 +21,10 @@ async def on_message(message):
 #!test
     if message.content.startswith('!test'):
         await message.channel.send('Jeżeli to widzisz, to bot działa poprawnie! ' +message.author.mention)
+        
+#!rtmbb - USUŃ W NASTĘPNEJ AKTUALIZACJI
+    if message.content.startswith('!rtmbb'):
+        await message.channel.send('Do widzenia rytm 😩)
 
 #!granko 
     if message.content.startswith('!granko'):
