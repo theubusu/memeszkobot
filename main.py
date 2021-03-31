@@ -1,7 +1,7 @@
 import discord
 import os
 
-wersja = 'Release 1.5.5.1'
+wersja = 'Release 1.6'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -18,6 +18,18 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    
+#anime
+      if "anime"  in message.content.lower():
+        await message.channel.send('Usunięto!')
+        await message.delete()
+
+#geneshin
+      if "geneshin"  in message.content.lower():
+        await message.channel.send('Usunięto!')
+        await message.delete()        
+
+        
 #!test
     if message.content.startswith('!test'):
         await message.channel.send('Jeżeli to widzisz, to bot działa poprawnie! ' +message.author.mention)
