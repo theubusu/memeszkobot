@@ -20,23 +20,19 @@ async def on_message(message):
         return
     
 #anime
-      if "anime"  in message.content.lower():
-        await message.channel.send('Usunięto!')
-        await message.delete()
+    if "anime"  in message.content.lower():
+      await message.channel.send('Usunięto!')
+      await message.delete()
 
 #geneshin
-      if "geneshin"  in message.content.lower():
-        await message.channel.send('Usunięto!')
-        await message.delete()        
+    if "geneshin"  in message.content.lower():
+      await message.channel.send('Usunięto!')
+      await message.delete()        
 
         
 #!test
     if message.content.startswith('!test'):
-        await message.channel.send('Jeżeli to widzisz, to bot działa poprawnie! ' +message.author.mention)
-        
-#!rtmbb - USUŃ W NASTĘPNEJ AKTUALIZACJI
-    if message.content.startswith('!rtmbb'):
-        await message.channel.send('Do widzenia rytm :weary:')
+        await message.channel.send('Jeżeli to widzisz, to bot działa poprawnie! ' +message.author.mention)        
 
 #!granko 
     if message.content.startswith('!granko'):
