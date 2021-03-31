@@ -25,7 +25,7 @@ async def on_message(message):
       await message.delete()
 
 #geneshin
-    if "geneshin"  in message.content.lower():
+    if "genshin"  in message.content.lower():
       await message.channel.send('Usunięto!')
       await message.delete()        
 
