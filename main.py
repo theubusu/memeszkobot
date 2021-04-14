@@ -9,7 +9,7 @@ client = discord.Client()
 async def on_ready():
     game = discord.Game(gra)
     await client.change_presence(status=discord.Status.online, activity=game) 
-    channel = client.get_channel(803905457387339776)
+    channel = client.get_channel(813379346768986123)
     embedVar = discord.Embed(title="MeMeSzkoBot 3.0", description="MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: ", color=404040)
     embedVar.add_field(name=wersja, value="Lista wersji dostępna [tutaj](https://pastebin.com/raw/CMbKpM4g)", inline=False)
     await channel.send(embed=embedVar)
