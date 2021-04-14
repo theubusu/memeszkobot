@@ -1,7 +1,7 @@
 import discord
 import os
 
-wersja = 'Release 1.6'
+wersja = 'Release 1.6.5'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -9,7 +9,7 @@ client = discord.Client()
 async def on_ready():
     game = discord.Game(gra)
     await client.change_presence(status=discord.Status.online, activity=game) 
-    channel = client.get_channel(813379346768986123)
+    channel = client.get_channel(803905457387339776)
     embedVar = discord.Embed(title="MeMeSzkoBot 3.0", description="MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: ", color=404040)
     embedVar.add_field(name=wersja, value="Lista wersji dostępna [tutaj](https://pastebin.com/raw/CMbKpM4g)", inline=False)
     await channel.send(embed=embedVar)
@@ -18,18 +18,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
-#anime
-    if "anime"  in message.content.lower():
-      await message.channel.send('Usunięto!')
-      await message.delete()
 
-#geneshin
-    if "genshin"  in message.content.lower():
-      await message.channel.send('Usunięto!')
-      await message.delete()        
-
-        
+#star
+    if message.channel.id == 814122754504392735:
+      emoji = '⭐'
+      await message.add_reaction(emoji)
+              
 #!test
     if message.content.startswith('!test'):
         await message.channel.send('Jeżeli to widzisz, to bot działa poprawnie! ' +message.author.mention)        
