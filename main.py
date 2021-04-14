@@ -1,7 +1,7 @@
 import discord
 import os
 
-wersja = 'Release 1.6.5'
+wersja = 'Release 1.6.6'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -21,8 +21,9 @@ async def on_message(message):
 
 #star
     if message.channel.id == 814122754504392735:
-      emoji = '⭐'
-      await message.add_reaction(emoji)
+      if message.attachments or "http"  in message.content.lower():
+        emoji = '⭐'
+        await message.add_reaction(emoji)
               
 #!test
     if message.content.startswith('!test'):
