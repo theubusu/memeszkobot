@@ -2,7 +2,7 @@ import discord
 import os
 import nacl
 
-wersja = 'WERSJA TESTOWA'
+wersja = 'Release 1.8'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -51,7 +51,7 @@ async def on_message(message):
 #!kmd
     if message.content.startswith('!kmd'):
         embedVar = discord.Embed(title="Lista Komend", description="Wszystkie komendy MeMeSzkobota", color=0x0099ff)
-        embedVar.add_field(name="Komendy:", value="!granko - granko time\n!przerwa - przerwa time\n!gpu - pokazuje ci RTX 3090 na pocieszenie\n!kmd - lista komend\n!test - testuje działalność bota\n!info - informacje o bocie", inline=False)
+        embedVar.add_field(name="Komendy:", value="!granko - granko time\n!przerwa - przerwa time\n!gpu - pokazuje ci RTX 3090 na pocieszenie\n!kmd - lista komend\n!test - testuje działalność bota\n!info - informacje o bocie\n!vc - dołącz do kanału głosowego (beta)", inline=False)
         embedVar.set_thumbnail(url="https://media.tenor.com/images/c78f273d8f6a182827a539302582adb6/tenor.gif")
         embedVar.set_footer(text='MeMeSzkoBot 3.0. Wersja ' +wersja)
         await message.channel.send(embed=embedVar)
