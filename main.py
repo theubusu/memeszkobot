@@ -2,8 +2,8 @@ import discord
 import os
 import nacl
 
-wersja = 'Release 1.8'
-gra = "Apu Band"
+wersja = 'Release 1.8.5'
+gra = "floppa"
 client = discord.Client()
 
 @client.event
@@ -14,6 +14,7 @@ async def on_ready():
     embedVar = discord.Embed(title="MeMeSzkoBot 3.0", description="MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: ", color=404040)
     embedVar.add_field(name=wersja, value="Lista wersji dostępna [tutaj](https://pastebin.com/raw/CMbKpM4g)", inline=False)
     await channel.send(embed=embedVar)
+    print ("MeMeSzkoBot Uruchomiony :)")
 
 @client.event
 async def on_message(message):
@@ -101,6 +102,11 @@ async def on_message(message):
         await message.author.voice.channel.connect()
         emoji = '👍'
         await message.add_reaction(emoji)
+        
+#!dm
+    if message.content.startswith('!dm'):
+      await message.author.send('elo')
+      await message.delete()
 
 
 client.run(os.getenv('Token'))
