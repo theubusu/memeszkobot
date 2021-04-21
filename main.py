@@ -1,7 +1,7 @@
 import discord
 import os
 
-wersja = 'Release 1.6.6'
+wersja = 'Release 1.7'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -85,5 +85,13 @@ async def on_message(message):
       else:
         emoji = '⛔'
         await message.add_reaction(emoji)
+        
+#!rtx
+    if message.content.startswith('!gpu'):
+        embedVar = discord.Embed(title="RTX 3090", description= "Masz na pocieszenie", color=0x444444)
+        embedVar.set_image(url="https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3090/geforce-rtx-3090-shop-600-p@2x.png")
+        embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
+        embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
+        await message.channel.send(embed=embedVar)
 
 client.run(os.getenv('Token'))
