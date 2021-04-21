@@ -1,7 +1,8 @@
 import discord
 import os
+import nacl
 
-wersja = 'Release 1.7'
+wersja = 'WERSJA TESTOWA'
 gra = "Apu Band"
 client = discord.Client()
 
@@ -93,5 +94,13 @@ async def on_message(message):
         embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
         embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
         await message.channel.send(embed=embedVar)
+        
+#!vc
+    if message.content.startswith('!vc'):
+      if message.author.voice:
+        await message.author.voice.channel.connect()
+        emoji = '👍'
+        await message.add_reaction(emoji)
+
 
 client.run(os.getenv('Token'))
