@@ -1,8 +1,10 @@
 import discord
 import os
 import nacl
+import asyncio
+import random
 
-wersja = 'Release 1.8.5'
+wersja = 'Release 2.0'
 gra = "floppa"
 client = discord.Client()
 
@@ -14,7 +16,7 @@ async def on_ready():
     embedVar = discord.Embed(title="MeMeSzkoBot 3.0", description="MeMeSzkoBot 3..0 został uruchomiony i zaaktualizowany do najnowszej dostępnej wersji pomyślnie. Aktualna Wersja: ", color=404040)
     embedVar.add_field(name=wersja, value="Lista wersji dostępna [tutaj](https://pastebin.com/raw/CMbKpM4g)", inline=False)
     await channel.send(embed=embedVar)
-    print ("MeMeSzkoBot Uruchomiony :)")
+    print ("MeMeszkobot uruchomiony =)")
 
 @client.event
 async def on_message(message):
@@ -52,7 +54,7 @@ async def on_message(message):
 #!kmd
     if message.content.startswith('!kmd'):
         embedVar = discord.Embed(title="Lista Komend", description="Wszystkie komendy MeMeSzkobota", color=0x0099ff)
-        embedVar.add_field(name="Komendy:", value="!granko - granko time\n!przerwa - przerwa time\n!gpu - pokazuje ci RTX 3090 na pocieszenie\n!dm - wysyła ci miłą wiadomość od MeMeszkobota\n!kmd - lista komend\n!test - testuje działalność bota\n!info - informacje o bocie\n!vc - dołącz do kanału głosowego (beta)", inline=False)
+        embedVar.add_field(name="Komendy:", value="!granko - granko time\n!przerwa - przerwa time\n!gpu - pokazuje ci RTX 3090 na pocieszenie\n!kmd - lista komend\n!test - testuje działalność bota\n!info - informacje o bocie\n!vc - dołącz do kanału głosowego (beta)\n!lubienie - pokazuje czy memeszkobot cie lubi\n!losowanko - losuje numer od 1 do 10\n!floppa - pokazuje floppe\n!glonojad - pokazuje glonojada", inline=False)
         embedVar.set_thumbnail(url="https://media.tenor.com/images/c78f273d8f6a182827a539302582adb6/tenor.gif")
         embedVar.set_footer(text='MeMeSzkoBot 3.0. Wersja ' +wersja)
         await message.channel.send(embed=embedVar)
@@ -107,6 +109,33 @@ async def on_message(message):
     if message.content.startswith('!dm'):
       await message.author.send('elo')
       await message.delete()
+
+#!lubienie
+    if message.content.startswith('!lubienie'):
+      test = await message.channel.send('nie lubie cie')
+      await asyncio.sleep(2)
+      await test.edit(content='zartowalem lol')   
+
+#!losowanko
+    if message.content.startswith('!losowanko'):
+      replys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+      await message.channel.send(f"Wylosowałeś numer {random.choice(replys)}")
+
+#!floppa
+    if message.content.startswith('!floppa'):
+        embedVar = discord.Embed(title="floppa", description= "floppa koks", color=0x444444)
+        embedVar.set_image(url="https://i.imgur.com/fWH8yMi.gif")
+        embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
+        embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
+        await message.channel.send(embed=embedVar)
+
+#!glonojad
+    if message.content.startswith('!glonojad'):
+        embedVar = discord.Embed(title="glonojad", description= "glonojad koks", color=0x444444)
+        embedVar.set_image(url="https://images-ext-1.discordapp.net/external/u6GOs3coINF6zs9Ee-LqI-PIV6pkKs8zzq2_zn7Izko/https/media.discordapp.net/attachments/779272937382477834/833601567663718480/glonojad-crazy.gif?width=230&height=230")
+        embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
+        embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
+        await message.channel.send(embed=embedVar)
 
 
 client.run(os.getenv('Token'))
