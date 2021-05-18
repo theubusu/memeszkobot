@@ -36,7 +36,7 @@ async def on_message(message):
 #!granko 
     if message.content.startswith('!granko'):
         if "terraria" in message.content.lower():
-          await message.channel.send('<@841618949371461652>')
+          await message.channel.send('<@&841618949371461652>')
           embedVar = discord.Embed(title="Granko Time?", description= "Ktoś chce granko!", color=0x00ff00)
           embedVar.set_image(url="https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg?t=1590092560")
           embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
