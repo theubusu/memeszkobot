@@ -37,14 +37,14 @@ async def on_message(message):
     if message.content.startswith('!granko'):
         if "terraria" in message.content.lower():
           await message.channel.send('<@&841618949371461652>')
-          embedVar = discord.Embed(title="Granko Time?", description= "Ktoś chce granko!", color=0x00ff00)
+          embedVar = discord.Embed(title="Granko Time?", description= "Ktoś chce granko w terrarie!", color=0x00ff00)
           embedVar.set_image(url="https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg?t=1590092560")
           embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
           embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
           await message.channel.send(embed=embedVar)
         else:
           await message.channel.send('<@&705077146204504144>')
-          embedVar = discord.Embed(title="Granko Time?", description= "Ktoś chce granko w terrarie!", color=0x00ff00)
+          embedVar = discord.Embed(title="Granko Time?", description= "Ktoś chce granko!", color=0x00ff00)
           embedVar.set_image(url="https://images-ext-1.discordapp.net/external/bfOVAGmGLYXgAwPk5cO1JbOUliaPshr7h4B9MDgK2KY/%3Fwidth%3D346%26height%3D229/https/media.discordapp.net/attachments/680160808403337326/732984544059326574/GRANKo.png")
           embedVar.set_author(name='MeMeszkoBot 3.0', icon_url='https://cdn.discordapp.com/avatars/819887662571847721/5262f14e44a9e8cc719feaa3bf2ff605.webp?size=256')
           embedVar.set_footer(text='Użyj !kmd aby pokazać listę komend.')
